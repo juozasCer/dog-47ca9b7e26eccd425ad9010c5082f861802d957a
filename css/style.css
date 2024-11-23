@@ -1,0 +1,502 @@
+/* Font Face */
+@font-face {
+  font-family: 'Mainfont';
+  src: url('/fonts/CalinyMedium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General Reset and Base Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Mainfont', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* background-color: #333; */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-buttons {
+  display: flex;
+  margin-left: auto;
+}
+
+.header-button {
+  background: linear-gradient(225deg, #10E6C2, #7D46F2);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 8px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 40px;
+  height: 40px;
+}
+
+.header-button::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-position: center;
+}
+
+.header-button.twitter-hover::before {
+  background-image: url('/images/twitter1.svg');
+}
+
+.header-button.telegram-hover::before {
+  background-image: url('/images/telegram1.svg');
+}
+
+.header-button:hover.twitter-hover::before {
+  background-image: url('/images/twitter.svg');
+}
+
+.header-button:hover.telegram-hover::before {
+  background-image: url('/images/telegram.svg');
+}
+
+.header-button:hover {
+  background: linear-gradient(225deg, #7D46F2, #10E6C2); /* Change gradient direction and colors on hover */
+}
+
+/* Section Styles */
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Section Background Image */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Section Content */
+.logo {
+  font-size: 150px;
+  margin-bottom: 20px;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  line-height: 0.85;
+  letter-spacing: -5px;
+  font-weight: 400;
+  text-shadow:
+    -4px -4px 0 #000,
+     4px -4px 0 #000,
+    -4px  4px 0 #000,
+     4px  4px 0 #000,
+    -4px  0 0 #000,
+     4px  0 0 #000,
+     0 -4px 0 #000,
+     0  4px 0 #000;
+}
+
+.content {
+  bottom: -50px;
+  z-index: 2;
+  text-align: center;
+  position: relative;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(225deg, #10E6C2, #7D46F2);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  position: relative;
+  max-width: 60vw;
+  box-sizing: border-box;
+}
+
+.contact-info span {
+  margin-right: 40px;
+}
+
+.copy-button {
+  position: relative;
+  background: linear-gradient(225deg, #10E6C2, #7D46F2);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+}
+
+.copy-button::before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-position: center;
+  background-image: url('/images/copy.svg');
+}
+
+.copy-button:hover::before {
+  background-image: url('/images/copy1.svg');
+}
+
+.copy-button:hover {
+  background: linear-gradient(225deg, #7D46F2, #10E6C2); /* Change gradient direction and colors on hover */
+}
+
+.contact-button {
+  display: inline-block;
+  background: linear-gradient(225deg, #10E6C2, #7D46F2);
+  color: white;
+  padding: 10px 20px;
+  font-size: 40px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.contact-button:hover {
+  color:#000;
+  background: linear-gradient(225deg, #7D46F2,#10E6C2);
+}
+
+/* Background Styles for Sections */
+#section2 {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 0;
+  background-color: #f0f0f0;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/GAMEBACKGROUND.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.above-game-area {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.above-game-text {
+  font-size: 90px;
+  color: white;
+  line-height: 1;
+  text-shadow:
+    -4px -4px 0 #000,
+     4px -4px 0 #000,
+    -4px  4px 0 #000,
+     4px  4px 0 #000,
+    -4px  0 0 #000,
+     4px  0 0 #000,
+     0 -4px 0 #000,
+     0  4px 0 #000;
+  font-weight: 400;
+}
+
+.leaderboard-title
+{
+  position: relative;
+  left: 20%;
+}
+
+/* Container for game area and leaderboard */
+.game-leaderboard-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* width: 100%; */
+  /* max-width: 1200px; Adjust as needed */
+  gap: 20px; /* Space between game area and leaderboard */
+}
+
+/* Game Area Styles */
+#gameArea {
+  position: relative;
+  width: 50vw; /* Adjusted to fit side by side with leaderboard */
+  height: 50vh;
+  background-color: #222;
+  overflow: hidden;
+  border-radius: 20px;
+  background-image: url('/images/GAMEBG.png');
+  background-size: auto 540px;
+  animation: scrollBackground 10s linear infinite;
+  z-index: 1; /* Ensuring game area is on top */
+}
+
+@keyframes scrollBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 540px;
+  }
+}
+
+#player {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 70px;
+  height: 100px;
+  background-image: url('/images/playerimg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#startButton {
+  font-family: 'Mainfont', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 20px;
+  background: linear-gradient(225deg, #10E6C2, #7D46F2);
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#gameOverText {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: red;
+  font-weight: bold;
+  z-index: 1;
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: #fff;
+  z-index: 1;
+}
+
+.falling-block {
+  position: absolute;
+  border-radius: 5px;
+}
+
+/* Leaderboard Styles */
+#leaderboardSection {
+  /* width: 48vw; Adjusted to fit side by side with game area */
+  margin-top: 60px; /* Added margin to ensure space from game area */
+}
+
+#leaderboard {
+  width: 50%;
+  border-radius: 20px; /* General border-radius */
+  text-align: left;
+  background-color: #262646; /* Ensures readability if overlapping issues persist */
+}
+
+#leaderboard th, #leaderboard td {
+  padding: 10px;
+}
+
+#leaderboard th {
+  background-color: #1b1b34;
+}
+
+#leaderboard th:first-child {
+  border-top-left-radius: 20px; /* Round top-left corner of header */
+}
+
+#leaderboard th:last-child {
+  border-top-right-radius: 20px; /* Round top-right corner of header */
+}
+
+/* Remove unnecessary rounding for all tds */
+#leaderboard td:first-child,
+#leaderboard td:last-child {
+  border-radius: 0; /* Reset any rounding on table data cells */
+}
+
+/* Apply border-radius to bottom corners of the last row */
+#leaderboard tr:last-child td:first-child {
+  border-bottom-left-radius: 20px; /* Round bottom-left corner */
+}
+
+#leaderboard tr:last-child td:last-child {
+  border-bottom-right-radius: 20px; /* Round bottom-right corner */
+}
+
+#leaderboard tr {
+  background-color: #1b1b34;
+}
+
+
+/* Name Input Section Styles */
+#nameInputSection {
+  margin-top: 200px;
+  /* width: 290px; Adjusted to fit side by side with leaderboard */
+  display: flex;
+  position: absolute;
+  left:35%;
+  flex-direction: column;
+  align-items: center;
+}
+
+#playerName {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  /* width: 80%; */
+}
+
+#setNameButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(225deg, #10E6C2, #7D46F2);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#setNameButton:hover {
+  background: linear-gradient(225deg, #7D46F2,#10E6C2);
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(225deg, #10E6C2, #7D46F2);
+  color: white;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .game-leaderboard-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #gameArea, #leaderboardSection, #nameInputSection {
+    width: 90%;
+  }
+}
+
+/* Separator Styles */
+.separator {
+  height: 101px; /* Adjust height based on your image */
+  width: 100%; /* Full width of the container */
+  background-image: url("/images/separator2.png"); /* URL of your separator image */
+  background-size: auto 100%; /* Make sure the height is consistent, width auto adjusts */
+  background-repeat: repeat-x; /* Repeat the image horizontally */
+  background-position: 0 0; /* Start positioning from the top left corner */
+  position: relative; /* Position context for animation */
+  overflow: hidden; /* Hide any overflow */
+  animation: moveSeparator 10s linear infinite; /* Apply the animation */
+}
+
+@keyframes moveSeparator {
+  from {
+    background-position: 0 0; /* Start position */
+  }
+  to {
+    background-position: 100% 0; /* End position */
+  }
+}
